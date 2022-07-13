@@ -1,8 +1,7 @@
 #ifndef CLUSTERLIST_CLUSTERALGORITHM_H
 #define CLUSTERLIST_CLUSTERALGORITHM_H
 
-#include "source/Cluster.h"
-#include <ArxTypeTraits.h>
+#include "Cluster.h"
 
 template<class CL, typename T = CL>
 class ClusterAlgorithm {
@@ -41,13 +40,13 @@ public:
             : m_cl{cl}
     {}
 
-    void kmeans(clt::type_clAmount);
+    void separateByDiff(clt::type_clAmount);
 };
 
 
 //----------[PUBLIC]
 template<typename CL, class T>
-void ClusterAlgorithm<CL, T>::kmeans(clt::type_clAmount clNum) {
+void ClusterAlgorithm<CL, T>::separateByDiff(clt::type_clAmount clNum) {
     if(clNum < m_cl.length()) {
         auto *aBorders = getIndexOfFirstKMax(clNum);
         for (clt::type_clAmount i = 0; i < clNum; i++)
