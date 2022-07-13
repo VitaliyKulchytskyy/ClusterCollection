@@ -1,7 +1,8 @@
 #ifndef CLUSTERLIST_CLUSTERALGORITHM_H
 #define CLUSTERLIST_CLUSTERALGORITHM_H
 
-#include "Cluster.h"
+#include "source/Cluster.h"
+#include <ArxTypeTraits.h>
 
 template<class CL, typename T = CL>
 class ClusterAlgorithm {

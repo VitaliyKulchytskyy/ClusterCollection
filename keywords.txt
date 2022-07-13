@@ -1,0 +1,31 @@
+#######################################
+# Syntax Coloring Map ClusterCollection
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Cluster	KEYWORD1
+ClusterAlgorithm	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+getValue	KEYWORD2
+lshift	KEYWORD2
+rshift	KEYWORD2
+remove	KEYWORD2
+clear	KEYWORD2
+insert	KEYWORD2
+length	KEYWORD2
+isEmpty	KEYWORD2
+kmeans	KEYWORD2
+getClusterAmount	KEYWORD2	
+
+#######################################
+# Constants (LITERAL1) | typedef of clt::
+#######################################
+
+type_elemAmount	LITERAL1
+type_clAmount	LITERAL1

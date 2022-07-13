@@ -3,8 +3,8 @@
 
 // cluster type
 namespace clt {
-    typedef std::size_t type_clAmount;
-    typedef std::size_t type_elemAmount;
+    typedef uint8_t      type_clAmount;
+    typedef uint16_t     type_elemAmount;
 }
 
 template<class T>
