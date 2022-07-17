@@ -17,9 +17,6 @@
     #elif defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__) // Arduino Mega
         #define AMOUNT_CLUSTERS uint8_t
         #define AMOUNT_ELEMENTS uint16_t
-    #elif define(__AVR_ATSAM3X8E__) // Arduino DUE
-        #define AMOUNT_CLUSTERS uint16_t
-        #define AMOUNT_ELEMENTS uint32_t
     #else // other boards
         #define AMOUNT_CLUSTERS uint8_t
         #define AMOUNT_ELEMENTS uint16_t
