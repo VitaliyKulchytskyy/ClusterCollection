@@ -5,9 +5,6 @@
 
 #if IS_ARDUINO_FRAMEWORK == 1
     #include <ArxTypeTraits.h>
-    #define enable_if enable_if
-#else
-    #define enable_if std::enable_if
 #endif
 
 template<class CL, typename T = CL>
@@ -28,12 +25,12 @@ private:
     Cluster<CL>& m_cl;
 private:
     template<typename CL1 = CL>
-    typename enable_if<!has_comparator<CL1>::value, T>::type getValue(clt::type_elemAmount i) const {
+    typename std::enable_if<!has_comparator<CL1>::value, T>::type getValue(clt::type_elemAmount i) const {
         return *(&m_cl[0] + i);
     }
 
     template<typename CL1 = CL>
-    typename enable_if<has_comparator<CL1>::value, T>::type getValue(clt::type_elemAmount i) const {
+    typename std::enable_if<has_comparator<CL1>::value, T>::type getValue(clt::type_elemAmount i) const {
         return (&m_cl[0] + i)->getComparator();
     }
 

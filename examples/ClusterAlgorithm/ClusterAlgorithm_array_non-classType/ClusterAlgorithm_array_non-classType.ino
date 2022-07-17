@@ -34,7 +34,7 @@ void setup() {
   // From this statement ClusterAlgorithm have an accession to change cluster's borders
   // Some of the algorithms also can swap elements in the original array
 
-  clAlgo.separateByDiff(3);  
+  clAlgo.separateByDiff(4);  
   printCluster(cl);
 }
 

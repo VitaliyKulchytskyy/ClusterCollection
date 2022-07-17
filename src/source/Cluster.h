@@ -25,7 +25,7 @@ private:
         void lshift(clt::type_elemAmount = 1);
         void rshift(clt::type_elemAmount = 1);
         void remove();
-        T* operator& (); // to get value of this border;
+        T* operator& () const; // to get value of this border;
 
         friend class Cluster;
     };
@@ -197,7 +197,7 @@ void Cluster<T>::Node::rshift(clt::type_elemAmount shift) {
 }
 
 template<class T>
-T *Cluster<T>::Node::operator&() {
+T *Cluster<T>::Node::operator&() const {
     return border;
 }
 
