@@ -20,7 +20,7 @@ clear	KEYWORD2
 insert	KEYWORD2
 length	KEYWORD2
 isEmpty	KEYWORD2
-kmeans	KEYWORD2
+separateByDiff	KEYWORD2
 getClusterAmount	KEYWORD2	
 
 #######################################

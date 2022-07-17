@@ -1,11 +1,7 @@
 #ifndef CLUSTERLIST_CLUSTER_H
 #define CLUSTERLIST_CLUSTER_H
 
-// cluster type
-namespace clt {
-    typedef std::size_t type_clAmount;
-    typedef std::size_t type_elemAmount;
-}
+#include "Settings.h"
 
 template<class T>
 class Cluster {
