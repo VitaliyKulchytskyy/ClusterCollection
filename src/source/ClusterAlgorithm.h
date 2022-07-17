@@ -5,6 +5,9 @@
 
 #if IS_ARDUINO_FRAMEWORK == 1
     #include <ArxTypeTraits.h>
+    #define enable_if enable_if
+#else
+    #define enable_if std::enable_if
 #endif
 
 template<class CL, typename T = CL>
@@ -25,12 +28,12 @@ private:
     Cluster<CL>& m_cl;
 private:
     template<typename CL1 = CL>
-    typename std::enable_if<!has_comparator<CL1>::value, T>::type getValue(clt::type_elemAmount i) const {
+    typename enable_if<!has_comparator<CL1>::value, T>::type getValue(clt::type_elemAmount i) const {
         return *(&m_cl[0] + i);
     }
 
     template<typename CL1 = CL>
-    typename std::enable_if<has_comparator<CL1>::value, T>::type getValue(clt::type_elemAmount i) const {
+    typename enable_if<has_comparator<CL1>::value, T>::type getValue(clt::type_elemAmount i) const {
         return (&m_cl[0] + i)->getComparator();
     }
 
@@ -50,10 +53,11 @@ public:
 
 //----------[PUBLIC]
 template<typename CL, class T>
-void ClusterAlgorithm<CL, T>::separateByDiff(clt::type_clAmount clNum) {
-    if(clNum < m_cl.length()) {
-        auto *aBorders = getIndexOfFirstKMax(clNum);
-        for (clt::type_clAmount i = 0; i < clNum; i++)
+void ClusterAlgorithm<CL, T>::separateByDiff(clt::type_clAmount outputClNum) {
+    outputClNum--;
+    if(outputClNum < m_cl.length()) {
+        auto *aBorders = getIndexOfFirstKMax(outputClNum);
+        for (clt::type_clAmount i = 0; i < outputClNum; i++)
             m_cl.insert(aBorders[i] + 1); // noexcept function | +1 - наступний елемент є границею
         delete[] aBorders;
     }
